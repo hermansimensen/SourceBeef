@@ -1,0 +1,157 @@
+FileVersion = 1
+LastConfig = "Debug"
+LastPlatform = "Win32"
+RecentFilesList = ["src\\CServerPlugin.bf", "src\\Interface.bf", "c:\\Program Files\\BeefLang\\BeefLibs\\corlib\\src\\Runtime.bf", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "c:\\Program Files\\BeefLang\\BeefLibs\\corlib\\src\\String.bf", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "c:\\Program Files\\BeefLang\\BeefLibs\\corlib\\src\\Type.bf"]
+
+[MainWindow]
+X = -8
+Y = 0
+Width = 1200
+Height = 1024
+ShowKind = "Maximized"
+
+[MainDockingFrame]
+Type = "DockingFrame"
+SplitType = 2
+
+[[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 482.0
+RequestedHeight = 723.0
+SizePriority = 723.0
+Type = "DockingFrame"
+SplitType = 1
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+RequestedWidth = 456.0
+RequestedHeight = 723.0
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "Workspace"
+TabWidth = 115.0
+Type = "ProjectPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+IsFillWidget = true
+Permanent = true
+RequestedWidth = 1918.0
+RequestedHeight = 64.0
+SizePriority = 1918.0
+DefaultDocumentsTabbedView = true
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Runtime.bf"
+TabWidth = 102.0
+Type = "SourceViewPanel"
+FilePath = "c:\\Program Files\\BeefLang\\BeefLibs\\corlib\\src\\Runtime.bf"
+CursorPos = 5007
+VertPos = 2895.0
+ProjectName = "corlib"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Disassembly"
+TabWidth = 122.0
+Type = "DisassemblyPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Interface.bf"
+TabWidth = 95.0
+Type = "SourceViewPanel"
+FilePath = "src\\Interface.bf"
+CursorPos = 814
+VertPos = 141.0
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "CServerPlugin.bf"
+TabWidth = 125.0
+Type = "SourceViewPanel"
+FilePath = "src\\CServerPlugin.bf"
+CursorPos = 5402
+VertPos = 2916.0
+
+[[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 724.0
+RequestedHeight = 250.0
+Type = "DockingFrame"
+SplitType = 1
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+RequestedWidth = 724.0
+RequestedHeight = 250.0
+SizePriority = 0.4306569
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Memory"
+TabWidth = 99.0
+Type = "MemoryPanel"
+AutoResize = "Auto_Mul8"
+RequestedWidth = 309.0
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "Watch"
+TabWidth = 86.0
+Type = "WatchPanel"
+Columns = [{Width = 200.0}, {Width = 182.0}, {Width = 200.0}]
+Items = ["esp", "eax", "esi", ""]
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Modules"
+TabWidth = 101.0
+Type = "ModulePanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Diagnostics"
+TabWidth = 117.0
+Type = "DiagnosticsPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Class View"
+TabWidth = 111.0
+Type = "ClassViewPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+RequestedWidth = 1684.0
+RequestedHeight = 250.0
+SizePriority = 0.5693431
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Find Results"
+TabWidth = 119.0
+Type = "FindResultsPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Threads"
+TabWidth = 97.0
+Type = "ThreadPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Call Stack"
+TabWidth = 105.0
+Type = "CallStackPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Immediate"
+TabWidth = 111.0
+Type = "ImmediatePanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "Output"
+TabWidth = 90.0
+Type = "OutputPanel"
+
+[[Breakpoints]]
+File = "src\\SamplePlugin.bf"
+Line = 17
+Column = 2
+
+[[Breakpoints]]
+File = "src\\SamplePlugin.bf"
+Line = 10
+Column = 3
