@@ -9,35 +9,37 @@ namespace SourceBeef
 
 		public struct InstantiateInterfaceFn;
 		static CPlugin _plugin;
-		public static CPlugin *createPlugin()
+	   
+		public static CPlugin *createPlugin(CPluginMethods methods)
 		{
 			_plugin.vtable = new CPluginVTable();
-			_plugin.vtable.Load = => CPluginMethods.LoadFunc;
-			_plugin.vtable.Unload = => CPluginMethods.UnloadFunc;
-			_plugin.vtable.Pause = => CPluginMethods.PauseFunc;
-			_plugin.vtable.UnPause = => CPluginMethods.UnPauseFunc;
-			_plugin.vtable.GetPluginDescription = => CPluginMethods.GetPluginDescriptionFunc;
-			_plugin.vtable.LevelInit = => CPluginMethods.LevelInitFunc;
-			_plugin.vtable.ServerActivate = => CPluginMethods.ServerActivateFunc;
-			_plugin.vtable.GameFrame = => CPluginMethods.GameFrameFunc;
-			_plugin.vtable.LevelShutdown = => CPluginMethods.LevelShutdownFunc;
-			_plugin.vtable.ClientActive = => CPluginMethods.ClientActiveFunc;
-			_plugin.vtable.ClientDisconnect = => CPluginMethods.ClientDisconnectFunc;
-			_plugin.vtable.ClientPutInServer = => CPluginMethods.ClientPutInServerFunc;
-			_plugin.vtable.SetClientCommand = => CPluginMethods.SetClientCommandFunc;
-			_plugin.vtable.ClientSettingsChanged = => CPluginMethods.ClientSettingsChangedFunc;
-			_plugin.vtable.ClientConnect = => CPluginMethods.ClientConnectFunc;
-			_plugin.vtable.ClientCommand = => CPluginMethods.ClientCommandFunc;
-			_plugin.vtable.NetworkIDValidated = => CPluginMethods.NetworkIDValidatedFunc;
-			_plugin.vtable.OnQueryCvarValueFinished = => CPluginMethods.OnQueryCvarValueFinishedFunc;
-			_plugin.vtable.OnEdictAllocated = => CPluginMethods.OnEdictAllocatedFunc;
-			_plugin.vtable.OnEdictFreed = => CPluginMethods.OnEdictFreedFunc;
-			_plugin.vtable.FireGameEvent = => CPluginMethods.FireGameEventFunc;
-			_plugin.vtable.GetCommandIndex = => CPluginMethods.GetCommandIndex;
+			_plugin.vtable.Load = => methods.Load;
+			_plugin.vtable.Unload = => methods.Unload;
+			_plugin.vtable.Pause = => methods.Pause;
+			_plugin.vtable.UnPause = => methods.UnPause;
+			_plugin.vtable.GetPluginDescription = => methods.GetPluginDescription;
+			_plugin.vtable.LevelInit = => methods.LevelInit;
+			_plugin.vtable.ServerActivate = => methods.ServerActivate;
+			_plugin.vtable.GameFrame = => methods.GameFrame;
+			_plugin.vtable.LevelShutdown = => methods.LevelShutdown;
+			_plugin.vtable.ClientActive = => methods.ClientActive;
+			_plugin.vtable.ClientDisconnect = => methods.ClientDisconnect;
+			_plugin.vtable.ClientPutInServer = => methods.ClientPutInServer;
+			_plugin.vtable.SetClientCommand = => methods.SetClientCommand;
+			_plugin.vtable.ClientSettingsChanged = => methods.ClientSettingsChanged;
+			_plugin.vtable.ClientConnect = => methods.ClientConnect;
+			_plugin.vtable.ClientCommand = => methods.ClientCommand;
+			_plugin.vtable.NetworkIDValidated = => methods.NetworkIDValidated;
+			_plugin.vtable.OnQueryCvarValueFinished = => methods.OnQueryCvarValueFinished;
+			_plugin.vtable.OnEdictAllocated = => methods.OnEdictAllocated;
+			_plugin.vtable.OnEdictFreed = => methods.OnEdictFreed;
+			_plugin.vtable.FireGameEvent = => methods.FireGameEvent;
+			_plugin.vtable.GetCommandIndex = => methods.GetCommandIndex;
 			return &_plugin;
 		}
 
-		public static CPlugin* plugin = createPlugin();
+		static SamplePlugin samplePlugin;
+		public static CPlugin* plugin = createPlugin(samplePlugin);
 	}
 
 	class Interface
@@ -47,6 +49,9 @@ namespace SourceBeef
 		{
 			return plugin;
 		}
+
+
+
 
 	}
 }

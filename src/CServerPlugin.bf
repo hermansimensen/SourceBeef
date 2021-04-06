@@ -116,122 +116,121 @@ namespace SourceBeef
 		public CPluginVTable *vtable;
 	}
 
-	class CPluginMethods
+	abstract class CPluginMethods
 	{
-		int m_iClientCommandIndex;
-	    public bool LoadFunc(void* interfaceFactory, void* gameServerFactory)
+	    public bool Load(void* interfaceFactory, void* gameServerFactory)
 		{
+			Warning("Plugin has loaded! %i \n",  69);
+			Msg("This is a message \n");
 			return true; 
 		}
 		
-		public void UnloadFunc()
-		{
-			
-		}
-		
-		public void PauseFunc()
-		{
-
-		}
-
-		
-		public void UnPauseFunc()
+		public void Unload()
 		{
 
 		}
 		
-		public void* GetPluginDescriptionFunc()
-		{
-			return pluginName.CStr();
-		}
-
-		public void LevelInitFunc( char8* mapname)
-		{
-
-
-		}
-		
-		public void ServerActivateFunc( edict_t pEdictList, int edictCount, int clientMax)
-		{
-
-
-		}
-
-		public void GameFrameFunc( bool simulating)
+		public void Pause()
 		{
 
 		}
 		
-		public void LevelShutdownFunc()
+		public void UnPause()
+		{
+
+		}
+		
+		public void* GetPluginDescription()
+		{
+			return "My Plugin";
+		}
+
+		public void LevelInit(char8* mapname)
+		{
+
+		}
+		
+		public void ServerActivate(edict_t pEdictList, int edictCount, int clientMax)
+		{
+
+
+		}
+
+		public void GameFrame(bool simulating)
+		{
+
+		}
+		
+		public void LevelShutdown()
 		{
 
 		}
 
 		
-		public void ClientActiveFunc( edict_t entity)
+		public void ClientActive(edict_t entity)
 		{
 
 
 		}
 		
-		public void ClientDisconnectFunc( edict_t pEntity)
+		public void ClientDisconnect(edict_t pEntity)
 		{
 
 		}
 
-		public void ClientPutInServerFunc( edict_t pEntity, char8* playername)
+		public void ClientPutInServer(edict_t pEntity, char8* playername)
 		{
 
-
-		}
-		
-		public void SetClientCommandFunc( int index)
-		{
 
 		}
 		
-		public void ClientSettingsChangedFunc( edict_t pEdict)
+		public void SetClientCommand(int index)
 		{
 
 		}
 		
-		public PLUGIN_RESULT ClientConnectFunc( bool *bAllowConnect, edict_t *pEntity, char8 *pszName, char8 *pszAddress, char8 *reject, int maxrejectlen )
+		public void ClientSettingsChanged(edict_t pEdict)
 		{
-					return .PLUGIN_CONTINUE;
+
 		}
 		
-		public PLUGIN_RESULT ClientCommandFunc( edict_t *pEntity, CCommand args )
-		{
-					return .PLUGIN_CONTINUE;
-		}
-		
-		public PLUGIN_RESULT NetworkIDValidatedFunc( char8 *pszUserName, char8 *pszNetworkID )
+		public PLUGIN_RESULT ClientConnect(bool *bAllowConnect, edict_t *pEntity, char8 *pszName, char8 *pszAddress, char8 *reject, int maxrejectlen)
 		{
 			return .PLUGIN_CONTINUE;
 		}
 		
-		public void OnQueryCvarValueFinishedFunc()
+		public PLUGIN_RESULT ClientCommand(edict_t *pEntity, CCommand args )
+		{
+			return .PLUGIN_CONTINUE;
+		}
+		
+		public PLUGIN_RESULT NetworkIDValidated(char8 *pszUserName, char8 *pszNetworkID)
+		{
+			return .PLUGIN_CONTINUE;
+		}
+		
+		public void OnQueryCvarValueFinished()
 		{
 
 		}
 		
-		public void OnEdictAllocatedFunc( edict_t *edict)
+		public void OnEdictAllocated(edict_t *edict)
 		{
 
 		}
 
-		public void OnEdictFreedFunc( edict_t *edict)
+		public void OnEdictFreed(edict_t *edict)
 		{
 
 		}
 		
-		public void FireGameEventFunc( KeyValues * event)
+		public void FireGameEvent(KeyValues * event)
 		{
 		}
 
 		public int GetCommandIndex()
 		{
-			return m_iClientCommandIndex;
+			return 0;
 		}
 	}
 }
