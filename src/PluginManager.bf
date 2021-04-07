@@ -1,18 +1,15 @@
-namespace SourceBeef
+namespace SourceBeef //you can't do that. It will create a circular dependency,
 {
 	using System;
 	using System.Collections;
 
 	static
 	{
-		public static String pluginName =  "Beefy Source Plugin\0";
-
-		public struct InstantiateInterfaceFn;
-		static CPlugin _plugin;
-	   
-		public static CPlugin *createPlugin(CPluginMethods methods)
+		public static CPlugin<T> CreatePlugin<T>(T methods)  where T : IPluginInterface
 		{
-			_plugin.vtable = new CPluginVTable();
+			/* This is needed in case you create multiple plugins; so like the _plugin isn't a static global variable anymore and can create multiple instances */
+			CPlugin<T> _plugin;
+			_plugin.vtable = new CPluginVTable<T>();
 			_plugin.vtable.Load = => methods.Load;
 			_plugin.vtable.Unload = => methods.Unload;
 			_plugin.vtable.Pause = => methods.Pause;
@@ -35,23 +32,7 @@ namespace SourceBeef
 			_plugin.vtable.OnEdictFreed = => methods.OnEdictFreed;
 			_plugin.vtable.FireGameEvent = => methods.FireGameEvent;
 			_plugin.vtable.GetCommandIndex = => methods.GetCommandIndex;
-			return &_plugin;
+			return _plugin;
 		}
-
-		static SamplePlugin samplePlugin;
-		public static CPlugin* plugin = createPlugin(samplePlugin);
-	}
-
-	class Interface
-	{
-		[Export, CLink]
-		static public void* CreateInterface(char8* name, int* returncode)
-		{
-			return plugin;
-		}
-
-
-
-
 	}
 }

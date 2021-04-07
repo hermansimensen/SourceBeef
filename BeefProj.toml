@@ -2,5 +2,6 @@ FileVersion = 1
 
 [Project]
 Name = "SourceBeef"
-TargetType = "BeefDynLib"
-StartupObject = "SourceBeef.Program"
+
+[Configs.Release.Win32]
+BuildKind = "StaticLib"

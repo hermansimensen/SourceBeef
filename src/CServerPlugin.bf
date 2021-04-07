@@ -5,7 +5,6 @@ namespace SourceBeef
 
 	static
 	{
-		struct CreateInterfaceFn;
 		struct edict_t;
 		struct CCommand;
 		struct KeyValues;
@@ -19,127 +18,125 @@ namespace SourceBeef
 	}
 
 	[CRepr]
-	struct CPluginVTable
+	struct CPluginVTable<T>
 	{
-		public function bool LoadFunc(CPluginMethods this, void* interfaceFactory, void* gameServerFactory);
-		public LoadFunc Load; //still don't know
+		public function bool LoadFunc(T this, void* interfaceFactory, void* gameServerFactory);
+		public LoadFunc Load;
 
-		public function void UnloadFunc(CPluginMethods this);
+		public function void UnloadFunc(T this);
 		public UnloadFunc Unload;
 
 		
-		public function void PauseFunc(CPluginMethods this);
+		public function void PauseFunc(T this);
 		public PauseFunc Pause;
 
 		
-		public function void UnPauseFunc(CPluginMethods this);
+		public function void UnPauseFunc(T this);
 		public UnPauseFunc UnPause;
 
 		
-		public function void* GetPluginDescriptionFunc(CPluginMethods this);
+		public function void* GetPluginDescriptionFunc(T this);
 		public GetPluginDescriptionFunc GetPluginDescription;
 
 		
-		public function void LevelInitFunc(CPluginMethods this, char8* mapname);
+		public function void LevelInitFunc(T this, char8* mapname);
 		public LevelInitFunc LevelInit;
 
 		
-		public function void ServerActivateFunc(CPluginMethods this, edict_t pEdictList, int edictCount, int clientMax);
+		public function void ServerActivateFunc(T this, edict_t pEdictList, int edictCount, int clientMax);
 		public ServerActivateFunc ServerActivate;
 
 		
-		public function void GameFrameFunc(CPluginMethods this, bool simulating);
+		public function void GameFrameFunc(T this, bool simulating);
 		public GameFrameFunc GameFrame;
 
 		
-		public function void LevelShutdownFunc(CPluginMethods this);
+		public function void LevelShutdownFunc(T this);
 		public LevelShutdownFunc LevelShutdown;
 
 		
-		public function void ClientActiveFunc(CPluginMethods this, edict_t entity);
+		public function void ClientActiveFunc(T this, edict_t entity);
 		public ClientActiveFunc ClientActive;
 
 		
-		public function void ClientDisconnectFunc(CPluginMethods this, edict_t pEntity);
+		public function void ClientDisconnectFunc(T this, edict_t pEntity);
 		public ClientDisconnectFunc ClientDisconnect;
 
 		
-		public function void ClientPutInServerFunc(CPluginMethods this, edict_t pEntity, char8* playername);
+		public function void ClientPutInServerFunc(T this, edict_t pEntity, char8* playername);
 		public ClientPutInServerFunc ClientPutInServer;
 
 		
-		public function void SetClientCommandFunc(CPluginMethods this, int index);
+		public function void SetClientCommandFunc(T this, int index);
 		public SetClientCommandFunc SetClientCommand;
 
 		
-		public function void ClientSettingsChangedFunc(CPluginMethods this, edict_t pEdict);
+		public function void ClientSettingsChangedFunc(T this, edict_t pEdict);
 		public ClientSettingsChangedFunc ClientSettingsChanged;
 
 		
-		public function PLUGIN_RESULT ClientConnectFunc(CPluginMethods this, bool *bAllowConnect, edict_t *pEntity, char8 *pszName, char8 *pszAddress, char8 *reject, int maxrejectlen );
+		public function PLUGIN_RESULT ClientConnectFunc(T this, bool *bAllowConnect, edict_t *pEntity, char8 *pszName, char8 *pszAddress, char8 *reject, int maxrejectlen );
 		public ClientConnectFunc ClientConnect;
 
 		
-		public function PLUGIN_RESULT ClientCommandFunc(CPluginMethods this, edict_t *pEntity, CCommand args );
+		public function PLUGIN_RESULT ClientCommandFunc(T this, edict_t *pEntity, CCommand args );
 		public ClientCommandFunc ClientCommand;
 
 		// A user has had their network id setup and validated
-		
-		public function PLUGIN_RESULT NetworkIDValidatedFunc(CPluginMethods this, char8 *pszUserName, char8 *pszNetworkID );
+		public function PLUGIN_RESULT NetworkIDValidatedFunc(T this, char8 *pszUserName, char8 *pszNetworkID );
 		public NetworkIDValidatedFunc NetworkIDValidated;
 
 		// This is called when a query from IServerPluginHelpers::StartQueryCvarValue is finished.
 		// iCookie is the value returned by IServerPluginHelpers::StartQueryCvarValue.
 		// Added with version 2 of the interface.
 		
-		public function void OnQueryCvarValueFinishedFunc(CPluginMethods this);
+		public function void OnQueryCvarValueFinishedFunc(T this);
 		public OnQueryCvarValueFinishedFunc OnQueryCvarValueFinished;
 
 		// added with version 3 of the interface.
 		
-		public function void OnEdictAllocatedFunc(CPluginMethods this, edict_t *edict);
+		public function void OnEdictAllocatedFunc(T this, edict_t *edict);
 		public OnEdictAllocatedFunc OnEdictAllocated;
 
-		public function void OnEdictFreedFunc(CPluginMethods this, edict_t *edict);	
+		public function void OnEdictFreedFunc(T this, edict_t *edict);	
 		public OnEdictFreedFunc OnEdictFreed;
 
-		public function void FireGameEventFunc(CPluginMethods this, KeyValues * event);
+		public function void FireGameEventFunc(T this, KeyValues * event);
 		public FireGameEventFunc FireGameEvent;
 
-		public function int GetCommandIndexFunc(CPluginMethods this);
+		public function int GetCommandIndexFunc(T this);
 		public GetCommandIndexFunc GetCommandIndex;
 	}
 
 	[CRepr]
-	struct CPlugin
+
+	struct CPlugin<T>
 	{
-		public CPluginVTable *vtable;
+		public CPluginVTable<T>* vtable;
 	}
 
-	abstract class CPluginMethods
+	interface IPluginInterface
 	{
-	    public bool Load(void* interfaceFactory, void* gameServerFactory)
+		public bool Load(void* interfaceFactory, void* gameServerFactory)
 		{
-			Warning("Plugin has loaded! %i \n",  69);
-			Msg("This is a message \n");
 			return true; 
 		}
-		
+
 		public void Unload()
 		{
 
 		}
-		
+
 		public void Pause()
 		{
 
 		}
-		
+
 		public void UnPause()
 		{
 
 		}
-		
+
 		public void* GetPluginDescription()
 		{
 			return "My Plugin";
@@ -149,7 +146,7 @@ namespace SourceBeef
 		{
 
 		}
-		
+
 		public void ServerActivate(edict_t pEdictList, int edictCount, int clientMax)
 		{
 
@@ -160,19 +157,19 @@ namespace SourceBeef
 		{
 
 		}
-		
+
 		public void LevelShutdown()
 		{
 
 		}
 
-		
+
 		public void ClientActive(edict_t entity)
 		{
 
 
 		}
-		
+
 		public void ClientDisconnect(edict_t pEntity)
 		{
 
@@ -183,37 +180,37 @@ namespace SourceBeef
 
 
 		}
-		
+
 		public void SetClientCommand(int index)
 		{
 
 		}
-		
+
 		public void ClientSettingsChanged(edict_t pEdict)
 		{
 
 		}
-		
+
 		public PLUGIN_RESULT ClientConnect(bool *bAllowConnect, edict_t *pEntity, char8 *pszName, char8 *pszAddress, char8 *reject, int maxrejectlen)
 		{
 			return .PLUGIN_CONTINUE;
 		}
-		
+
 		public PLUGIN_RESULT ClientCommand(edict_t *pEntity, CCommand args )
 		{
 			return .PLUGIN_CONTINUE;
 		}
-		
+
 		public PLUGIN_RESULT NetworkIDValidated(char8 *pszUserName, char8 *pszNetworkID)
 		{
 			return .PLUGIN_CONTINUE;
 		}
-		
+
 		public void OnQueryCvarValueFinished()
 		{
 
 		}
-		
+
 		public void OnEdictAllocated(edict_t *edict)
 		{
 
@@ -223,7 +220,7 @@ namespace SourceBeef
 		{
 
 		}
-		
+
 		public void FireGameEvent(KeyValues * event)
 		{
 		}

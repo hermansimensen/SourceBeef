@@ -1,0 +1,6 @@
+FileVersion = 1
+Dependencies = {corlib = "*", SourceBeef = "*"}
+
+[Project]
+Name = "SamplePlugin"
+TargetType = "BeefDynLib"

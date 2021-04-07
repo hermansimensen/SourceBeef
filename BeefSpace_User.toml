@@ -1,10 +1,10 @@
 FileVersion = 1
 LastConfig = "Debug"
 LastPlatform = "Win32"
-RecentFilesList = ["src\\CServerPlugin.bf", "src\\Interface.bf", "c:\\Program Files\\BeefLang\\BeefLibs\\corlib\\src\\Runtime.bf", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "c:\\Program Files\\BeefLang\\BeefLibs\\corlib\\src\\String.bf", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "c:\\Program Files\\BeefLang\\BeefLibs\\corlib\\src\\Type.bf"]
+RecentFilesList = ["SamplePlugin\\src\\SamplePlugin.bf", "src\\Interface.bf", "src\\Tier0.bf", "src\\CServerPlugin.bf", "Disassembly", "Disassembly"]
 
 [MainWindow]
-X = -8
+X = 0
 Y = 0
 Width = 1200
 Height = 1024
@@ -12,135 +12,137 @@ ShowKind = "Maximized"
 
 [MainDockingFrame]
 Type = "DockingFrame"
-SplitType = 2
-
-[[MainDockingFrame.DockedWidgets]]
-RequestedWidth = 482.0
-RequestedHeight = 723.0
-SizePriority = 723.0
-Type = "DockingFrame"
 SplitType = 1
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
-RequestedWidth = 456.0
-RequestedHeight = 723.0
+[[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 178.0
+RequestedHeight = 486.0
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Workspace"
 TabWidth = 115.0
 Type = "ProjectPanel"
 
+[[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 2134.0
+RequestedHeight = 1760.0
+SizePriority = 2134.0
+Type = "DockingFrame"
+SplitType = 2
+
 [[MainDockingFrame.DockedWidgets.DockedWidgets]]
 IsFillWidget = true
-Permanent = true
-RequestedWidth = 1918.0
-RequestedHeight = 64.0
-SizePriority = 1918.0
+RequestedWidth = 64.0
+RequestedHeight = 785.0
+SizePriority = 785.0
 DefaultDocumentsTabbedView = true
 Type = "TabbedView"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "Runtime.bf"
-TabWidth = 102.0
-Type = "SourceViewPanel"
-FilePath = "c:\\Program Files\\BeefLang\\BeefLibs\\corlib\\src\\Runtime.bf"
-CursorPos = 5007
-VertPos = 2895.0
-ProjectName = "corlib"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Disassembly"
-TabWidth = 122.0
+TabWidth = 112.0
 Type = "DisassemblyPanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Interface.bf"
-TabWidth = 95.0
+TabWidth = 105.0
 Type = "SourceViewPanel"
 FilePath = "src\\Interface.bf"
-CursorPos = 814
-VertPos = 141.0
+CursorPos = 133
+ProjectName = "SourceBeef"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
+TabLabel = "SamplePlugin.bf"
+TabWidth = 123.0
+Type = "SourceViewPanel"
+FilePath = "SamplePlugin\\src\\SamplePlugin.bf"
+CursorPos = 504
+ProjectName = "SamplePlugin"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Tier0.bf"
+TabWidth = 74.0
+Type = "SourceViewPanel"
+FilePath = "src\\Tier0.bf"
+CursorPos = 48
+ProjectName = "SourceBeef"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "CServerPlugin.bf"
 TabWidth = 125.0
 Type = "SourceViewPanel"
 FilePath = "src\\CServerPlugin.bf"
-CursorPos = 5402
-VertPos = 2916.0
+CursorPos = 398
+VertPos = 855.0
+ProjectName = "SourceBeef"
 
-[[MainDockingFrame.DockedWidgets]]
-RequestedWidth = 724.0
-RequestedHeight = 250.0
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+RequestedWidth = 282.0
+RequestedHeight = 188.0
 Type = "DockingFrame"
 SplitType = 1
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
-RequestedWidth = 724.0
-RequestedHeight = 250.0
-SizePriority = 0.4306569
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
+RequestedWidth = 282.0
+RequestedHeight = 188.0
+SizePriority = 0.19954
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Memory"
 TabWidth = 99.0
 Type = "MemoryPanel"
 AutoResize = "Auto_Mul8"
-RequestedWidth = 309.0
+RequestedWidth = 217.0
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-Active = true
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Watch"
 TabWidth = 86.0
 Type = "WatchPanel"
 Columns = [{Width = 200.0}, {Width = 182.0}, {Width = 200.0}]
-Items = ["esp", "eax", "esi", ""]
+Items = [""]
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Modules"
 TabWidth = 101.0
 Type = "ModulePanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "Diagnostics"
-TabWidth = 117.0
-Type = "DiagnosticsPanel"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "Class View"
-TabWidth = 111.0
-Type = "ClassViewPanel"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
-RequestedWidth = 1684.0
-RequestedHeight = 250.0
-SizePriority = 0.5693431
-Type = "TabbedView"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
 TabLabel = "Find Results"
 TabWidth = 119.0
 Type = "FindResultsPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Class View"
+TabWidth = 111.0
+Type = "ClassViewPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
+RequestedWidth = 1739.0
+RequestedHeight = 188.0
+SizePriority = 0.80046
+Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Threads"
 TabWidth = 97.0
 Type = "ThreadPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Call Stack"
 TabWidth = 105.0
 Type = "CallStackPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Immediate"
 TabWidth = 111.0
 Type = "ImmediatePanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Output"
 TabWidth = 90.0
@@ -148,10 +150,5 @@ Type = "OutputPanel"
 
 [[Breakpoints]]
 File = "src\\SamplePlugin.bf"
-Line = 17
-Column = 2
-
-[[Breakpoints]]
-File = "src\\SamplePlugin.bf"
-Line = 10
+Line = 6
 Column = 3

@@ -2,7 +2,7 @@ namespace SourceBeef
 {
 	using System;
 
-	static
+	public static
 	{
 		public static void Warning(String sInput, ...)
 		{
@@ -29,7 +29,7 @@ namespace SourceBeef
 		}
 	}
 
-	class Tier0
+	public class Tier0
 	{
 		[Import("tier0.dll"), LinkName("WarningV")]
 		public static extern void Warning_C(char8* format, void* varArgs);
@@ -39,6 +39,5 @@ namespace SourceBeef
 
 		[Import("tier0.dll"), LinkName("ErrorV")]
 		public static extern void Error_C(char8* format, void* varArgs);
-
 	}
 }
