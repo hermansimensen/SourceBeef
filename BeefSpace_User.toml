@@ -1,7 +1,7 @@
 FileVersion = 1
 LastConfig = "Debug"
 LastPlatform = "Win32"
-RecentFilesList = ["SamplePlugin\\src\\SamplePlugin.bf", "src\\Interface.bf", "src\\Tier0.bf", "src\\CServerPlugin.bf", "Disassembly", "Disassembly"]
+RecentFilesList = ["SamplePlugin\\src\\SamplePlugin.bf", "src\\PluginManager.bf", "Disassembly", "Disassembly", "src\\cstrike\\IVEngineServer.bf", "src\\CServerPlugin.bf", "src\\Tier0.bf", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly"]
 
 [MainWindow]
 X = 0
@@ -12,45 +12,53 @@ ShowKind = "Maximized"
 
 [MainDockingFrame]
 Type = "DockingFrame"
-SplitType = 1
+SplitType = 2
 
 [[MainDockingFrame.DockedWidgets]]
-RequestedWidth = 178.0
+RequestedWidth = 2312.0
+RequestedHeight = 1760.0
+SizePriority = 1760.0
+Type = "DockingFrame"
+SplitType = 1
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+RequestedWidth = 322.0
 RequestedHeight = 486.0
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Workspace"
 TabWidth = 115.0
 Type = "ProjectPanel"
 
-[[MainDockingFrame.DockedWidgets]]
-RequestedWidth = 2134.0
-RequestedHeight = 1760.0
-SizePriority = 2134.0
-Type = "DockingFrame"
-SplitType = 2
-
 [[MainDockingFrame.DockedWidgets.DockedWidgets]]
 IsFillWidget = true
 RequestedWidth = 64.0
 RequestedHeight = 785.0
-SizePriority = 785.0
+SizePriority = 64.0
 DefaultDocumentsTabbedView = true
 Type = "TabbedView"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "IVEngineServer.bf"
+TabWidth = 131.0
+Type = "SourceViewPanel"
+FilePath = "src\\cstrike\\IVEngineServer.bf"
+CursorPos = 57
+ProjectName = "SourceBeef"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Disassembly"
-TabWidth = 112.0
+TabWidth = 122.0
 Type = "DisassemblyPanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "Interface.bf"
-TabWidth = 105.0
+TabLabel = "PluginManager.bf"
+TabWidth = 132.0
 Type = "SourceViewPanel"
-FilePath = "src\\Interface.bf"
-CursorPos = 133
+FilePath = "src\\PluginManager.bf"
+CursorPos = 476
 ProjectName = "SourceBeef"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
@@ -59,7 +67,7 @@ TabLabel = "SamplePlugin.bf"
 TabWidth = 123.0
 Type = "SourceViewPanel"
 FilePath = "SamplePlugin\\src\\SamplePlugin.bf"
-CursorPos = 504
+CursorPos = 965
 ProjectName = "SamplePlugin"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
@@ -67,7 +75,7 @@ TabLabel = "Tier0.bf"
 TabWidth = 74.0
 Type = "SourceViewPanel"
 FilePath = "src\\Tier0.bf"
-CursorPos = 48
+CursorPos = 38
 ProjectName = "SourceBeef"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
@@ -75,74 +83,73 @@ TabLabel = "CServerPlugin.bf"
 TabWidth = 125.0
 Type = "SourceViewPanel"
 FilePath = "src\\CServerPlugin.bf"
-CursorPos = 398
-VertPos = 855.0
+CursorPos = 170
 ProjectName = "SourceBeef"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
-RequestedWidth = 282.0
+[[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 318.0
 RequestedHeight = 188.0
 Type = "DockingFrame"
 SplitType = 1
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
-RequestedWidth = 282.0
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+RequestedWidth = 318.0
 RequestedHeight = 188.0
-SizePriority = 0.19954
+SizePriority = 0.504171
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "Memory"
-TabWidth = 99.0
-Type = "MemoryPanel"
-AutoResize = "Auto_Mul8"
-RequestedWidth = 217.0
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Watch"
 TabWidth = 86.0
 Type = "WatchPanel"
 Columns = [{Width = 200.0}, {Width = 182.0}, {Width = 200.0}]
 Items = [""]
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "Memory"
+TabWidth = 99.0
+Type = "MemoryPanel"
+AutoResize = "Auto_Mul8"
+RequestedWidth = 217.0
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Modules"
 TabWidth = 101.0
 Type = "ModulePanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
-Active = true
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Find Results"
 TabWidth = 119.0
 Type = "FindResultsPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Class View"
 TabWidth = 111.0
 Type = "ClassViewPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
-RequestedWidth = 1739.0
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+RequestedWidth = 1594.0
 RequestedHeight = 188.0
-SizePriority = 0.80046
+SizePriority = 0.495829
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Threads"
 TabWidth = 97.0
 Type = "ThreadPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Call Stack"
 TabWidth = 105.0
 Type = "CallStackPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Immediate"
 TabWidth = 111.0
 Type = "ImmediatePanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Output"
 TabWidth = 90.0
@@ -152,3 +159,6 @@ Type = "OutputPanel"
 File = "src\\SamplePlugin.bf"
 Line = 6
 Column = 3
+
+[[Breakpoints]]
+Symbol = "-main"

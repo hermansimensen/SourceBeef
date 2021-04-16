@@ -5,9 +5,22 @@ namespace SourceBeef
 
 	static
 	{
-		struct edict_t;
+		struct IServerEntity;
+
+		struct edict_t
+		{
+			void* ptr;
+		}
 		struct CCommand;
 		struct KeyValues;
+
+		enum IFaceReturn
+		{
+			IFACE_OK = 0,
+			IFACE_FAILED
+		};
+
+		function void* CreateInterfaceFn(char8* test, IFaceReturn* returncode);
 	}
 
 	enum PLUGIN_RESULT
@@ -20,7 +33,7 @@ namespace SourceBeef
 	[CRepr]
 	struct CPluginVTable<T>
 	{
-		public function bool LoadFunc(T this, void* interfaceFactory, void* gameServerFactory);
+		public function bool LoadFunc(T this, CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory); 
 		public LoadFunc Load;
 
 		public function void UnloadFunc(T this);
@@ -117,7 +130,7 @@ namespace SourceBeef
 
 	interface IPluginInterface
 	{
-		public bool Load(void* interfaceFactory, void* gameServerFactory)
+		public bool Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory)
 		{
 			return true; 
 		}
