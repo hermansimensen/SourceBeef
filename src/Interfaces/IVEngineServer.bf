@@ -1,4 +1,4 @@
-##pragma warning disable 4204
+#pragma warning disable 4204
 
 namespace SourceBeef
 {
