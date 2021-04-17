@@ -1,6 +1,7 @@
 namespace SamplePlugin
 {
 	using SourceBeef;
+	using static SourceBeef.SourceBeefAPI;
 	using System;
 
 	static
@@ -15,17 +16,7 @@ namespace SamplePlugin
 
 		public bool Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory)
 		{
-			IFaceReturn retCode = ?;
-
-			engineServer = (VEngineServer*)interfaceFactory("VEngineServer023", &retCode);
-
-			if(retCode == .IFACE_FAILED)
-			{
-				Error("Could not find the VEngineServer023 interface");
-				return false;
-			}
-
-			Msg("[SamplePlugin] SamplePlugin is now loaded %p \n");
+			Msg("[SamplePlugin] SamplePlugin is now loaded \n");
 			return true;
 		}
 
@@ -36,7 +27,7 @@ namespace SamplePlugin
 
 		public void ClientPutInServer(edict_t pEntity, char8* playername)
 		{
-			int client = engineServer.IndexOfEdict(pEntity);
+			int client = IndexOfEdict(pEntity);
 
 			Msg("[SamplePlugin] Client %s has connected to the server. Client index = %i \n", playername, client);
 		}
