@@ -69,7 +69,6 @@ namespace SourceBeef
 			return vEngineServer.PrecacheDecal(s, preload);
 		}
 
-
 		public static int PrecacheGeneric(char8* s, bool preload)
 		{
 			return vEngineServer.PrecacheGeneric(s, preload);

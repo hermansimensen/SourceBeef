@@ -12,8 +12,6 @@ namespace SamplePlugin
 
 	public class SamplePlugin : IPluginInterface
 	{
-		VEngineServer *engineServer = new VEngineServer();
-
 		public bool Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory)
 		{
 			Msg("[SamplePlugin] SamplePlugin is now loaded \n");
