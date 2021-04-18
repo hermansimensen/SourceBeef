@@ -27,17 +27,17 @@ namespace SourceBeef
 			Tier0.Error_C(sInput.CStr(), vaArgs.ToVAList());
 			vaArgs.End!();
 		}
-	}
+	} 
 
 	public class Tier0
 	{
-		[Import("tier0.dll"), LinkName("WarningV")]
+		[Import("tier0.dll"), LinkName("Warning")]
 		public static extern void Warning_C(char8* format, void* varArgs);
 
-		[Import("tier0.dll"), LinkName("MsgV")]
+		[Import("tier0.dll"), LinkName("Msg")]
 		public static extern void Msg_C(char8* format, void* varArgs);
 
-		[Import("tier0.dll"), LinkName("ErrorV")]
+		[Import("tier0.dll"), LinkName("Error")]
 		public static extern void Error_C(char8* format, void* varArgs);
 	}
 }
