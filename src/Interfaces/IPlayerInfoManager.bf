@@ -10,8 +10,8 @@ namespace SourceBeef
 		[Inline]
 		public CGlobalVars* GetGlobalVars()
 		{
-			function void*(System.Object this) GetGlobalVarsFunc = (.)calltable[1];
-			return (CGlobalVars*)GetGlobalVarsFunc(System.Internal.UnsafeCastToObject(&this));
+			function CGlobalVars*(System.Object this) GetGlobalVarsFunc = (.)calltable[1];
+			return GetGlobalVarsFunc(System.Internal.UnsafeCastToObject(&this));
 		}
 
 	}

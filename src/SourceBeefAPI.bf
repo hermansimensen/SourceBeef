@@ -5,24 +5,67 @@ namespace SourceBeef
 	{
 		static SourceBeefAPI sourceBeefAPI;
 		public static CGlobalVars* gpGlobals;
+
+		enum EngineVersion
+		{
+			Engine_CSS,
+			Engine_CSGO
+		}
 	}
 
 	static class SourceBeefAPI
 	{
 		public static PlayerInfoManager *playerInfoManager;
 		public static VEngineServer *vEngineServer;
-		
-		[Import("server.dll"), CLink]
-		public static extern void* CreateInterface(char8* name, IFaceReturn* returnCode);
-
-		[Import("engine.dll"), LinkName("CreateInterface")]
-		public static extern void* CreateInterfaceEngine(char8* name, IFaceReturn* returnCode);
-
 		static IFaceReturn retCode;
 
-		public static this()
+
+		static CreateInterfaceFn gameServerFactory;
+		static CreateInterfaceFn interfaceFactory;
+
+		private static EngineVersion engineVersion;
+
+		public static void Initiate(CreateInterfaceFn interfaceF, CreateInterfaceFn gameServerF)
 		{
-			playerInfoManager = (PlayerInfoManager*) CreateInterface("PlayerInfoManager002", &retCode);
+			interfaceFactory = interfaceF;
+			gameServerFactory = gameServerF;
+			DetectGame();
+			RegisterInterfaces();
+
+			gpGlobals = playerInfoManager.GetGlobalVars();
+		}
+
+		public static EngineVersion GetEngineVersion()
+		{
+			return engineVersion;
+		}
+
+		private static void DetectGame()
+		{
+			String workingDir = scope String();
+
+			System.IO.Directory.GetCurrentDirectory(workingDir);
+
+			for (var dirEntry in System.IO.Directory.EnumerateDirectories(workingDir))
+			{
+				let dirName = scope String();
+				dirEntry.GetFilePath(dirName);
+
+				if(dirName.Contains("cstrike"))
+				{
+					engineVersion = .Engine_CSS;
+				}
+				else if (dirName.Contains("csgo"))
+				{
+					engineVersion = .Engine_CSGO;
+				}
+			}
+			return;
+		}
+
+		private static void RegisterInterfaces()
+		{
+			playerInfoManager = (PlayerInfoManager*) gameServerFactory("PlayerInfoManager002", &retCode);
 
 			if(retCode == .IFACE_FAILED)
 			{
@@ -30,15 +73,13 @@ namespace SourceBeef
 				return;
 			}
 
-			vEngineServer = (VEngineServer*) CreateInterfaceEngine("VEngineServer023", &retCode);
+			vEngineServer = (VEngineServer*) interfaceFactory("VEngineServer023", &retCode);
 
 			if(retCode == .IFACE_FAILED)
 			{
 				Error("Could not get VEngineServer023 interface.");
 				return;
 			}
-
-			gpGlobals = playerInfoManager.GetGlobalVars();
 		}
 
 		/*

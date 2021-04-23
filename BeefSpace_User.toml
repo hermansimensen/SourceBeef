@@ -1,7 +1,7 @@
 FileVersion = 1
 LastConfig = "Debug"
 LastPlatform = "Win32"
-RecentFilesList = ["SamplePlugin\\src\\SamplePlugin.bf", "src\\PluginManager.bf", "Disassembly", "Disassembly", "src\\cstrike\\IVEngineServer.bf", "src\\CServerPlugin.bf", "src\\Tier0.bf", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly"]
+RecentFilesList = ["src\\SourceBeefAPI.bf", "src\\Interfaces\\IPlayerInfoManager.bf", "SamplePlugin\\src\\SamplePlugin.bf", "Disassembly", "src\\PluginManager.bf", "src\\Interfaces\\IVEngineServer.bf", "Disassembly", "src\\CServerPlugin.bf", "src\\Tier0.bf", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "src\\cstrike\\IVEngineServer.bf", "Disassembly", "Disassembly", "Disassembly", "Disassembly"]
 
 [MainWindow]
 X = 0
@@ -15,15 +15,15 @@ Type = "DockingFrame"
 SplitType = 2
 
 [[MainDockingFrame.DockedWidgets]]
-RequestedWidth = 2312.0
-RequestedHeight = 1760.0
-SizePriority = 1760.0
+RequestedWidth = 231.0
+RequestedHeight = 487.0
+SizePriority = 487.0
 Type = "DockingFrame"
 SplitType = 1
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets]]
-RequestedWidth = 322.0
-RequestedHeight = 486.0
+RequestedWidth = 216.0
+RequestedHeight = 778.0
 Type = "TabbedView"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
@@ -34,18 +34,36 @@ Type = "ProjectPanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets]]
 IsFillWidget = true
-RequestedWidth = 64.0
-RequestedHeight = 785.0
-SizePriority = 64.0
+RequestedWidth = 1918.0
+RequestedHeight = 64.0
+SizePriority = 1918.0
 DefaultDocumentsTabbedView = true
 Type = "TabbedView"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "IPlayerInfoManager.bf"
+TabWidth = 167.0
+Type = "SourceViewPanel"
+FilePath = "src\\Interfaces\\IPlayerInfoManager.bf"
+CursorPos = 135
+ProjectName = "SourceBeef"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "SourceBeefAPI.bf"
+TabWidth = 128.0
+Type = "SourceViewPanel"
+FilePath = "src\\SourceBeefAPI.bf"
+CursorPos = 1023
+VertPos = 675.0
+ProjectName = "SourceBeef"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "IVEngineServer.bf"
 TabWidth = 131.0
 Type = "SourceViewPanel"
-FilePath = "src\\cstrike\\IVEngineServer.bf"
-CursorPos = 57
+FilePath = "src\\Interfaces\\IVEngineServer.bf"
+CursorPos = 1804
 ProjectName = "SourceBeef"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
@@ -62,12 +80,11 @@ CursorPos = 476
 ProjectName = "SourceBeef"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-Active = true
 TabLabel = "SamplePlugin.bf"
 TabWidth = 123.0
 Type = "SourceViewPanel"
 FilePath = "SamplePlugin\\src\\SamplePlugin.bf"
-CursorPos = 965
+CursorPos = 666
 ProjectName = "SamplePlugin"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
@@ -75,7 +92,7 @@ TabLabel = "Tier0.bf"
 TabWidth = 74.0
 Type = "SourceViewPanel"
 FilePath = "src\\Tier0.bf"
-CursorPos = 38
+CursorPos = 641
 ProjectName = "SourceBeef"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
@@ -83,12 +100,12 @@ TabLabel = "CServerPlugin.bf"
 TabWidth = 125.0
 Type = "SourceViewPanel"
 FilePath = "src\\CServerPlugin.bf"
-CursorPos = 170
+CursorPos = 3603
 ProjectName = "SourceBeef"
 
 [[MainDockingFrame.DockedWidgets]]
 RequestedWidth = 318.0
-RequestedHeight = 188.0
+RequestedHeight = 468.0
 Type = "DockingFrame"
 SplitType = 1
 
@@ -162,3 +179,68 @@ Column = 3
 
 [[Breakpoints]]
 Symbol = "-main"
+
+[[Breakpoints]]
+File = "SamplePlugin\\src\\SamplePlugin.bf"
+Line = 29
+Column = 3
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 19
+Column = 3
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 24
+Column = 3
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 24
+Column = 3
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 24
+Column = 3
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 28
+Column = 4
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 29
+Column = 4
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 18
+Column = 2
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 54
+Column = 2
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 26
+Column = 3
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 57
+Column = 3
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 18
+Column = 2
+
+[[Breakpoints]]
+File = "src\\SourceBeefAPI.bf"
+Line = 20
+Column = 2

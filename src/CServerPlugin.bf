@@ -48,7 +48,7 @@ namespace SourceBeef
 		public UnPauseFunc UnPause;
 
 		
-		public function void* GetPluginDescriptionFunc(T this);
+		public function char8* GetPluginDescriptionFunc(T this);
 		public GetPluginDescriptionFunc GetPluginDescription;
 
 		
@@ -122,7 +122,6 @@ namespace SourceBeef
 	}
 
 	[CRepr]
-
 	struct CPlugin<T>
 	{
 		public CPluginVTable<T>* vtable;
@@ -150,7 +149,7 @@ namespace SourceBeef
 
 		}
 
-		public void* GetPluginDescription()
+		public char8* GetPluginDescription()
 		{
 			return "My Plugin";
 		}

@@ -4,40 +4,19 @@ namespace SourceBeef
 
 	public static
 	{
-		public static void Warning(String sInput, ...)
-		{
-			VarArgs vaArgs = .();
-			vaArgs.Start!();
-			Tier0.Warning_C(sInput.CStr(), vaArgs.ToVAList());
-			vaArgs.End!();
-		}
+#if BF_PLATFORM_WINDOWS
+		private const String TIER0_MODULE = "tier0.dll";
+#elif BF_PLATFORM_LINUX
+		private static String TIER0_MODULE = "libtier0.so";
+#endif
 
-		public static void Msg(String sInput, ...)
-		{
-			VarArgs vaArgs = .();
-			vaArgs.Start!();
-			Tier0.Msg_C(sInput.CStr(), vaArgs.ToVAList());
-			vaArgs.End!();
-		}
+		[Import(TIER0_MODULE), CLink]
+		public static extern void Warning(char8* format, ...);
 
-		public static void Error(String sInput, ...)
-		{
-			VarArgs vaArgs = .();
-			vaArgs.Start!();
-			Tier0.Error_C(sInput.CStr(), vaArgs.ToVAList());
-			vaArgs.End!();
-		}
-	} 
+		[Import(TIER0_MODULE), CLink]
+		public static extern void Msg(char8* format, ...);
 
-	public class Tier0
-	{
-		[Import("tier0.dll"), LinkName("Warning")]
-		public static extern void Warning_C(char8* format, void* varArgs);
-
-		[Import("tier0.dll"), LinkName("Msg")]
-		public static extern void Msg_C(char8* format, void* varArgs);
-
-		[Import("tier0.dll"), LinkName("Error")]
-		public static extern void Error_C(char8* format, void* varArgs);
+		[Import(TIER0_MODULE), CLink]
+		public static extern void Error(char8* format, ...);
 	}
 }
