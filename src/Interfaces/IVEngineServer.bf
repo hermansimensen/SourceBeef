@@ -3,6 +3,7 @@
 namespace SourceBeef
 {
 	using System;
+
 	struct VEngineServer
 	{
 		public void **calltable;
@@ -85,10 +86,18 @@ namespace SourceBeef
 		}
 
 		[Inline]
-		public int IndexOfEdict(edict_t edict)
+		public int IndexOfEdict(void* edict)
 		{
-			function int(System.Object this, edict_t pEdict) IndexOfEdictFunc = (.)calltable[18];
+			function int(System.Object this, void* pEdict) IndexOfEdictFunc = (.)calltable[18];
 			return IndexOfEdictFunc(System.Internal.UnsafeCastToObject(&this), edict);
+		}
+
+		
+		[Inline]
+		public void* PEntityOfEntIndex( int iEntIndex )
+		{
+			function void*(System.Object this, int pEdict) IndexOfEdictFunc = (.)calltable[19];
+			return IndexOfEdictFunc(System.Internal.UnsafeCastToObject(&this), iEntIndex);
 		}
 	}
 }

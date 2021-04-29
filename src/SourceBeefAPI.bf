@@ -17,6 +17,7 @@ namespace SourceBeef
 	{
 		public static PlayerInfoManager *playerInfoManager;
 		public static VEngineServer *vEngineServer;
+		public static GameEventManager *gameEventManager;
 		static IFaceReturn retCode;
 
 
@@ -86,9 +87,19 @@ namespace SourceBeef
 		 *	Here is where we expose some helper functions to the plugin so manual hooking of interfaces isn't needed.
 		 */
 
-		public static int IndexOfEdict(edict_t pEdict)
+		public static int IndexOfEdict(void* pEdict)
 		{
 			return vEngineServer.IndexOfEdict(pEdict);
+		}
+
+		public static void* PEntityOfEntIndex( int iEntIndex )
+		{
+			return vEngineServer.PEntityOfEntIndex(iEntIndex);
+		}
+
+		public static PlayerInfo* GetPlayerInfo(void* pEdict)
+		{
+			return (PlayerInfo*) playerInfoManager.GetPlayerInfo(pEdict);
 		}
 
 		/*

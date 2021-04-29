@@ -1,0 +1,7 @@
+namespace SourceBeef
+{
+	struct GameEvent
+	{
+
+	}
+}

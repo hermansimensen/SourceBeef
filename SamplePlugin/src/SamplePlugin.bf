@@ -6,45 +6,65 @@ namespace SamplePlugin
 
 	static
 	{
-		public static SamplePlugin thisPlugin = new SamplePlugin();
-		public static CPlugin<SamplePlugin> plugin = CreatePlugin<SamplePlugin>(thisPlugin);
+		public static SamplePlugin myPlugin = new SamplePlugin(); //This is the instance of your plugin.
+		public static CPluginBridge pluginBridge = new CPluginBridge(myPlugin); //This is a bridge between the game and your plugin. Your plugin instance must be passed in here. 
 	}
 
 	public class SamplePlugin : IPluginInterface
 	{
+
 		public bool Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory)
 		{
-			SourceBeefAPI.Initiate(interfaceFactory, gameServerFactory); //You need to initiate the SourceBeef API before you can use any of its calls.
+			SourceBeefAPI.Initiate(interfaceFactory, gameServerFactory); //You must initiate the API before using any of its helper functions
 
-			Msg("[SamplePlugin] SamplePlugin is now loaded \n");
 			return true;
+		}
+
+		public PLUGIN_RESULT ClientCommand(void* pEntity, CCommand* args)
+		{
+			String buffer = scope .();
+			args.m_pArgSBuffer.ToString(buffer);
+
+			if(buffer.Contains("jointeam"))
+			{
+				Msg("0x%X\n", PEntityOfEntIndex(IndexOfEdict(pEntity)) );
+				PlayerInfo* playerinfo = GetPlayerInfo(pEntity);
+				char8* name = playerinfo.GetName();
+				int team = playerinfo.GetTeamIndex();
+
+				Vector vector = playerinfo.GetAbsOrigin();
+
+				Msg("[SamplePlugin] %s joined team %i.\n", name, team);
+			}
+			return .PLUGIN_CONTINUE;
 		}
 
 		public char8* GetPluginDescription()
 		{
 			return "My Sample Plugin, version 1.0.0";
 		}
-
+	
 		public void GameFrame(bool simulating)
 		{
-			CGlobalVars* globals = gpGlobals;
 
-			Msg("%f %f\n", globals.interval_per_tick, globals.curtime);
 		}
 
-		public void ClientPutInServer(edict_t pEntity, char8* playername)
+		public void ClientPutInServer(void* pEntity, char8* playername)
 		{
 			int client = IndexOfEdict(pEntity);
+
 			Msg("[SamplePlugin] Client %s has connected to the server. Client index = %i \n", playername, client);
 		}
 	}
 
+
+	//Your plugin must export a function called CreateInterface, which the game will call to retrieve the interface of your plugin. 
 	public class Interface
 	{
 		[Export, CLink]
-		static public CPlugin<SamplePlugin>* CreateInterface(char8* name, int* returncode)
+		static public CPlugin<CPluginBridge>* CreateInterface(char8* name, int* returncode)
 		{
-			return &plugin;
+			return &pluginBridge.pluginCallback;
 		} 
 	}
 }
