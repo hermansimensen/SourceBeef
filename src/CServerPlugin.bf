@@ -58,7 +58,7 @@ namespace SourceBeef
 			public int		m_nArgv0Size;
 			public char8[64]	m_pArgSBuffer;
 			public char8[512]	m_pArgvBuffer;
-			public char8*[64] m_ppArgv;
+			public char8[64] m_ppArgv;
 			public cmd_source_t m_source;
 		}
 		struct KeyValues;
@@ -122,6 +122,7 @@ namespace SourceBeef
 
 		public bool Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory)
 		{
+			SourceBeefAPI.Initiate(interfaceFactory, gameServerFactory);
 			return pluginInst.Load(interfaceFactory, gameServerFactory);
 		}
 

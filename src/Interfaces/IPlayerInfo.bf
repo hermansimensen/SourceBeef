@@ -122,12 +122,54 @@ namespace SourceBeef
 			return GetAbsOriginFunc(&this);
 		}
 
+		[Inline]
+		public Vector GetAbsAngles() mut
+		{
+			function Vector(void* this) GetAbsAnglesFunc = (.)calltable[16];
+			return GetAbsAnglesFunc(&this);
+		}
+
 		
+		[Inline]
+		public Vector GetPlayerMins() mut
+		{
+			function Vector(void* this) GetPlayerMinsFunc = (.)calltable[17];
+			return GetPlayerMinsFunc(&this);
+		}
+
+		[Inline]
+		public Vector GetPlayerMaxs() mut
+		{
+			function Vector(void* this) GetPlayerMaxsFunc = (.)calltable[18];
+			return GetPlayerMaxsFunc(&this);
+		}
+
+		[Inline]
+		public char8* GetWeaponName()
+		{
+			function char8*(void* this) GetWeaponNameFunc = (.)calltable[19];
+			return GetWeaponNameFunc(&this);
+		}
+
+		[Inline]
+		public char8* GetModelName()
+		{
+			function char8*(void* this) GetModelNameFunc = (.)calltable[20];
+			return GetModelNameFunc(&this);
+		}
+
 		[Inline]
 		public int GetHealth() mut
 		{
-			 function int(void* this) GetHealthFunc = (.)calltable[22];
+			 function int(void* this) GetHealthFunc = (.)calltable[21];
 			 return GetHealthFunc(&this);
+		}
+
+		[Inline]
+		public int GetMaxHealth() mut
+		{
+			 function int(void* this) GetMaxHealthFunc = (.)calltable[22];
+			 return GetMaxHealthFunc(&this);
 		}
 	}
 }

@@ -7,35 +7,39 @@ namespace SamplePlugin
 	static
 	{
 		public static SamplePlugin myPlugin = new SamplePlugin(); //This is the instance of your plugin.
-		public static CPluginBridge pluginBridge = new CPluginBridge(myPlugin); //This is a bridge between the game and your plugin. Your plugin instance must be passed in here. 
+		public static CPluginBridge pluginBridge = new CPluginBridge(myPlugin); //This is a bridge between the game and your plugin. Your plugin instance must be passed in here.
 	}
 
-	public class SamplePlugin : IPluginInterface
+	public class SamplePlugin : IPluginInterface, EventCallback
 	{
-
 		public bool Load(CreateInterfaceFn interfaceFactory, CreateInterfaceFn gameServerFactory)
 		{
-			SourceBeefAPI.Initiate(interfaceFactory, gameServerFactory); //You must initiate the API before using any of its helper functions
-
+			//Add an event listener. 
+			GameEventListener* listener = CreateEventListenerCallback(this);
+			AddListener(listener, "player_spawn", true);
+			AddListener(listener, "player_team", true);
 			return true;
+		}
+
+		public void FireGameEvent(GameEvent* event)
+		{
+			String name = scope .(event.GetName());
+			if(name.Equals("player_spawn"))
+			{
+				int userid = event.GetInt("userid");
+			}
+
+			if(name.Equals("player_team"))
+			{
+				int userid = event.GetInt("userid");
+				int team = event.GetInt("team");
+
+				Msg("Player with UserID %i jointed team %i", userid, team);
+			}
 		}
 
 		public PLUGIN_RESULT ClientCommand(void* pEntity, CCommand* args)
 		{
-			String buffer = scope .();
-			args.m_pArgSBuffer.ToString(buffer);
-
-			if(buffer.Contains("jointeam"))
-			{
-				Msg("0x%X\n", PEntityOfEntIndex(IndexOfEdict(pEntity)) );
-				PlayerInfo* playerinfo = GetPlayerInfo(pEntity);
-				char8* name = playerinfo.GetName();
-				int team = playerinfo.GetTeamIndex();
-
-				Vector vector = playerinfo.GetAbsOrigin();
-
-				Msg("[SamplePlugin] %s joined team %i.\n", name, team);
-			}
 			return .PLUGIN_CONTINUE;
 		}
 

@@ -7,6 +7,13 @@ namespace SourceBeef
 		public float z;
 	}
 
+	struct QAngle
+	{
+		public float x;
+		public float y;
+		public float z;
+	}
+
 	class Math
 	{
 

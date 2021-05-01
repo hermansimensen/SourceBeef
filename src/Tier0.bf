@@ -2,7 +2,7 @@ namespace SourceBeef
 {
 	using System;
 
-	public static
+ 	static
 	{
 #if BF_PLATFORM_WINDOWS
 		public const String TIER0_MODULE = "tier0.dll";

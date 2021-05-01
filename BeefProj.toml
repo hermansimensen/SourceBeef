@@ -3,5 +3,6 @@ FileVersion = 1
 [Project]
 Name = "SourceBeef"
 
-[Configs.Release.Win32]
-BuildKind = "StaticLib"
+[Configs.Debug.Win32]
+CLibType = "Static"
+BeefLibType = "Static"

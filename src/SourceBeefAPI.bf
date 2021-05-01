@@ -81,6 +81,14 @@ namespace SourceBeef
 				Error("Could not get VEngineServer023 interface.");
 				return;
 			}
+
+			gameEventManager = (GameEventManager*) interfaceFactory("GAMEEVENTSMANAGER002", &retCode);
+
+			if(retCode == .IFACE_FAILED)
+			{
+				Error("Could not get GAMEEVENTSMANAGER002 interface.");
+				return;
+			}
 		}
 
 		/*
@@ -100,6 +108,11 @@ namespace SourceBeef
 		public static PlayerInfo* GetPlayerInfo(void* pEdict)
 		{
 			return (PlayerInfo*) playerInfoManager.GetPlayerInfo(pEdict);
+		}
+
+		public static bool AddListener(GameEventListener *listener, char8* event, bool isServerSide)
+		{
+			return gameEventManager.AddListener(listener, event, isServerSide);
 		}
 
 		/*
