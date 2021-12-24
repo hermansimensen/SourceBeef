@@ -1,0 +1,12 @@
+FileVersion = 1
+
+[Project]
+Name = "SourceBeef-SDK"
+TargetType = "BeefLib"
+StartupObject = "SourceBeef_SDK.Program"
+
+[Configs.Debug.Win32]
+BuildKind = "StaticLib"
+
+[Configs.Release.Win32]
+BuildKind = "StaticLib"

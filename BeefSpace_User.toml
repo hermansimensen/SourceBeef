@@ -1,53 +1,87 @@
 FileVersion = 1
-LastConfig = "Debug"
+LastConfig = "Release"
 LastPlatform = "Win32"
-RecentFilesList = ["SamplePlugin\\src\\SamplePlugin.bf", "src\\Interfaces\\IGameEventListener.bf", "src\\Tier0.bf", "Disassembly", "src\\Interfaces\\IGameEventManager.bf", "src\\SourceBeefAPI.bf", "src\\Interfaces\\IGameEvent.bf", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly", "Disassembly"]
+RecentFilesList = ["c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\Core\\API.bf", "SourceBeef\\src\\SourceBeef.bf", "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\corlib\\src\\Internal.bf", "SourceBeef\\src\\ServerPlugin.bf", "SourceBeef-SDK\\src\\Core\\IPlugin.bf", "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\CSS\\IVEngineServer.bf", "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\CSS\\CGlobalVars.bf", "SourceBeefAPI\\src\\Exports.bf", "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\Core\\SBPluginGen.bf", "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\Common\\Types.bf", "Disassembly", "Disassembly", "SourceBeefAPI\\src\\Program.bf", "Disassembly", "Disassembly", "d:\\a01\\_work\\4\\s\\src\\vctools\\crt\\vcruntime\\src\\string\\i386\\MEMCPY.ASM", "Disassembly", "Disassembly", "Disassembly", "Disassembly"]
 
 [MainWindow]
 X = 0
 Y = 0
-Width = 1200
+Width = 1260
 Height = 1024
 ShowKind = "Maximized"
 
 [MainDockingFrame]
 Type = "DockingFrame"
-SplitType = 2
-
-[[MainDockingFrame.DockedWidgets]]
-RequestedWidth = 299.0
-RequestedHeight = 487.0
-SizePriority = 487.0
-Type = "DockingFrame"
 SplitType = 1
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
-RequestedWidth = 383.0
-RequestedHeight = 644.0
+[[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 222.0
+RequestedHeight = 266.0
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Workspace"
 TabWidth = 115.0
 Type = "ProjectPanel"
 
+[[MainDockingFrame.DockedWidgets]]
+RequestedWidth = 318.0
+RequestedHeight = 330.0
+SizePriority = 318.0
+Type = "DockingFrame"
+SplitType = 2
+
 [[MainDockingFrame.DockedWidgets.DockedWidgets]]
 IsFillWidget = true
 RequestedWidth = 1918.0
 RequestedHeight = 64.0
-SizePriority = 1918.0
+SizePriority = 64.0
 DefaultDocumentsTabbedView = true
 Type = "TabbedView"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "IGameEvent.bf"
-TabWidth = 123.0
+TabLabel = "Exports.bf"
+TabWidth = 89.0
 Type = "SourceViewPanel"
-FilePath = "src\\Interfaces\\IGameEvent.bf"
-CursorPos = 1025
-VertPos = 225.0
-ProjectName = "SourceBeef"
+FilePath = "SourceBeefAPI\\src\\Exports.bf"
+CursorPos = 1042
+VertPos = 135.0
+ProjectName = "SourceBeefAPI"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "CGlobalVars.bf"
+TabWidth = 117.0
+Type = "SourceViewPanel"
+FilePath = "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\CSS\\CGlobalVars.bf"
+CursorPos = 2049
+ProjectName = "SourceBeef-SDK"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Types.bf"
+TabWidth = 79.0
+Type = "SourceViewPanel"
+FilePath = "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\Common\\Types.bf"
+CursorPos = 123
+ProjectName = "SourceBeef-SDK"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "SBPluginGen.bf"
+TabWidth = 117.0
+Type = "SourceViewPanel"
+FilePath = "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\Core\\SBPluginGen.bf"
+CursorPos = 235
+ProjectName = "SourceBeef-SDK"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+Active = true
+TabLabel = "API.bf"
+TabWidth = 63.0
+Type = "SourceViewPanel"
+FilePath = "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\Core\\API.bf"
+CursorPos = 1525
+VertPos = 540.0
+ProjectName = "SourceBeef-SDK"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Disassembly"
@@ -55,127 +89,120 @@ TabWidth = 122.0
 Type = "DisassemblyPanel"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "Tier0.bf"
-TabWidth = 74.0
+TabLabel = "IPlugin.bf"
+TabWidth = 83.0
 Type = "SourceViewPanel"
-FilePath = "src\\Tier0.bf"
-CursorPos = 417
+FilePath = "SourceBeef-SDK\\src\\Core\\IPlugin.bf"
+CursorPos = 4080
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "SourceBeef.bf"
+TabWidth = 110.0
+Type = "SourceViewPanel"
+FilePath = "SourceBeef\\src\\SourceBeef.bf"
+CursorPos = 1088
 ProjectName = "SourceBeef"
 
 [[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "IGameEventListener.bf"
-TabWidth = 157.0
+TabLabel = "ServerPlugin.bf"
+TabWidth = 117.0
 Type = "SourceViewPanel"
-FilePath = "src\\Interfaces\\IGameEventListener.bf"
-CursorPos = 1333
-VertPos = 45.0
+FilePath = "SourceBeef\\src\\ServerPlugin.bf"
+CursorPos = 8908
+VertPos = 3299.0
 ProjectName = "SourceBeef"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-Active = true
-TabLabel = "SamplePlugin.bf"
-TabWidth = 123.0
-Type = "SourceViewPanel"
-FilePath = "SamplePlugin\\src\\SamplePlugin.bf"
-CursorPos = 1351
-VertPos = 585.0
-ProjectName = "SamplePlugin"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "IGameEventManager.bf"
-TabWidth = 165.0
-Type = "SourceViewPanel"
-FilePath = "src\\Interfaces\\IGameEventManager.bf"
-CursorPos = 420
-ProjectName = "SourceBeef"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "SourceBeefAPI.bf"
-TabWidth = 128.0
-Type = "SourceViewPanel"
-FilePath = "src\\SourceBeefAPI.bf"
-CursorPos = 2687
-VertPos = 1350.0
-ProjectName = "SourceBeef"
-
-[[MainDockingFrame.DockedWidgets]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets]]
 RequestedWidth = 318.0
-RequestedHeight = 307.6
+RequestedHeight = 350.0
 Type = "DockingFrame"
 SplitType = 1
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
 RequestedWidth = 318.0
 RequestedHeight = 188.0
 SizePriority = 0.5594369
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
-TabLabel = "Breakpoints"
-TabWidth = 118.0
-Type = "BreakpointPanel"
-
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Watch"
 TabWidth = 86.0
 Type = "WatchPanel"
 Columns = [{Width = 200.0}, {Width = 182.0}, {Width = 200.0}]
-Items = ["eax", "ecx", "0x78DF60A3", ""]
+Items = ["eax", "ecx", "eax", ""]
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
+TabLabel = "Breakpoints"
+TabWidth = 118.0
+Type = "BreakpointPanel"
+
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Memory"
 TabWidth = 99.0
 Type = "MemoryPanel"
 AutoResize = "Auto_Mul8"
 RequestedWidth = 343.0
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Modules"
 TabWidth = 101.0
 Type = "ModulePanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Class View"
 TabWidth = 111.0
 Type = "ClassViewPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets]]
 RequestedWidth = 1594.0
 RequestedHeight = 188.0
 SizePriority = 0.4405631
 Type = "TabbedView"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Find Results"
 TabWidth = 119.0
 Type = "FindResultsPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Threads"
 TabWidth = 97.0
 Type = "ThreadPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Call Stack"
 TabWidth = 105.0
 Type = "CallStackPanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 TabLabel = "Immediate"
 TabWidth = 111.0
 Type = "ImmediatePanel"
 
-[[MainDockingFrame.DockedWidgets.DockedWidgets.Tabs]]
+[[MainDockingFrame.DockedWidgets.DockedWidgets.DockedWidgets.Tabs]]
 Active = true
 TabLabel = "Output"
 TabWidth = 90.0
 Type = "OutputPanel"
 
 [[Breakpoints]]
-File = "src\\Interfaces\\IGameEventListener.bf"
-Line = 61
-Column = 9
+File = "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\Core\\IPlugin.bf"
+Line = 66
+Column = 2
+
+[[Breakpoints]]
+File = "c:\\Users\\Herman\\AppData\\Local\\BeefLang\\BeefLibs\\SourceBeef-SDK\\src\\Core\\IPlugin.bf"
+Line = 58
+Column = 3
+
+[[Breakpoints]]
+File = "SourceBeefAPI\\src\\Program.bf"
+Line = 20
+Column = 4
+
+[DebuggerDisplayTypes."Source_Tools.bsp.lump_t[64].[]"]
+IntDisplayType = "Binary"
 
 [DebuggerDisplayTypes.""]
-IntDisplayType = "Hexadecimal"
+IntDisplayType = "Decimal"

@@ -1,5 +1,6 @@
 FileVersion = 1
-Projects = {SourceBeef = {Path = "."}, SamplePlugin = {Path = "SamplePlugin"}}
+Projects = {SourceBeef = {Path = "SourceBeef"}, SourceBeef-SDK = "*", SourceBeefAPI = {Path = "SourceBeefAPI"}}
+Unlocked = ["SourceBeef-SDK"]
 
 [Workspace]
-StartupProject = "SamplePlugin"
+StartupProject = "SourceBeef"

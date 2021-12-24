@@ -1,8 +1,0 @@
-FileVersion = 1
-
-[Project]
-Name = "SourceBeef"
-
-[Configs.Debug.Win32]
-CLibType = "Static"
-BeefLibType = "Static"

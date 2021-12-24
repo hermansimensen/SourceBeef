@@ -2,17 +2,16 @@ FileVersion = 1
 Dependencies = {corlib = "*", SourceBeef-SDK = "*"}
 
 [Project]
-Name = "SamplePlugin"
+Name = "SourceBeef"
 TargetType = "BeefLib"
-StartupObject = "SamplePlugin.MyPlugin"
+StartupObject = "SourceBeef.SourceBeef"
 
 [Configs.Debug.Win32]
 BuildKind = "DynamicLib"
-CLibType = "Dynamic"
 
 [Configs."Debug - CStrike".Win32]
 BuildKind = "DynamicLib"
-CLibType = "Dynamic"
+BeefLibType = "Static"
 
 [Configs.Release.Win32]
 BuildKind = "DynamicLib"

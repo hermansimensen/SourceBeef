@@ -1,0 +1,31 @@
+FileVersion = 1
+Projects = {SamplePlugin = {Path = "../SamplePlugin"}}
+Unlocked = ["SourceBeef-SDK"]
+
+[Configs.Release_CStrike.Win32]
+PreprocessorMacros = ["CSTRIKE"]
+ConfigSelections = {SamplePlugin = {Config = "Release"}, corlib = {Config = "Release"}, SourceBeef-SDK = {Config = "Release"}}
+
+[Configs.Release_CStrike.Win64]
+ConfigSelections = {SamplePlugin = {Config = "Release"}, corlib = {Config = "Release"}, SourceBeef-SDK = {Config = "Release"}}
+
+[Configs.Release_CSGO.Win32]
+PreprocessorMacros = ["CSGO"]
+ConfigSelections = {SamplePlugin = {Config = "Release"}, corlib = {Config = "Release"}, SourceBeef-SDK = {Config = "Release"}}
+
+[Configs.Release_CSGO.Win64]
+ConfigSelections = {SamplePlugin = {Config = "Release"}, corlib = {Config = "Release"}, SourceBeef-SDK = {Config = "Release"}}
+
+[Configs.Debug_CStrike.Win64]
+ConfigSelections = {SamplePlugin = {Config = "Debug"}, corlib = {Config = "Debug"}, SourceBeef-SDK = {Config = "Debug"}}
+
+[Configs.Debug_CStrike.Win32]
+PreprocessorMacros = ["CSTRIKE"]
+ConfigSelections = {SamplePlugin = {Config = "Debug"}, corlib = {Config = "Debug"}, SourceBeef-SDK = {Config = "Debug"}}
+
+[Configs.Debug_CSGO.Win64]
+ConfigSelections = {SamplePlugin = {Config = "Debug"}, corlib = {Config = "Debug"}, SourceBeef-SDK = {Config = "Debug"}}
+
+[Configs.Debug_CSGO.Win32]
+PreprocessorMacros = ["CSGO"]
+ConfigSelections = {SamplePlugin = {Config = "Debug"}, corlib = {Config = "Debug"}, SourceBeef-SDK = {Config = "Debug"}}
